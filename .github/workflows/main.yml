@@ -70,10 +70,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: Build
-          path: ./
+          path: ./build
       - name: ls
         run: |
-          ls -la
+          ls -R
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
