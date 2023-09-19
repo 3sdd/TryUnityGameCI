@@ -58,7 +58,7 @@ jobs:
         run: |
           ls -la
       # Output
-      - uses: actions/upload-pages-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: Build
           path: build
@@ -66,6 +66,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: ls
+        run: |
+          ls -la
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
