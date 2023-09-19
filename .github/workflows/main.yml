@@ -59,6 +59,7 @@ jobs:
         with:
           name: Build
           path: build
+          
   deploy:
     needs: build
     permissions:
@@ -69,7 +70,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to Github Pages
+      - name: Deploy to Github Pages!
         id: deployment
         uses: actions/deploy-pages@v2
         with:
